@@ -2,15 +2,15 @@ Modellizzare la struttura di una tabella per memorizzare tutti i dati riguardant
 
 
 ID                      INT PRIMARY_KEY AUTOINCREMENT                                                           // NUMERO UNIVOCO CHE SI INCREMENTA DA SOLO
-MARCA                   VARCHAR(255)                                                                        
-MODELLO                 VARCHAR(255)
+MARCA                   VARCHAR(255)    NOT_NULL                                                                   
+MODELLO                 VARCHAR(255)    NOT_NULL
 COLORE                  VARCHAR(255)
-ANNO                    YEAR
-MOTORE                  VARCHAR(255)
-ALIMENTAZIONE           ENUM('BENZINA','DIESEL','METANO','GAS','ELETTRICA','IBRIDA')
-CAVALLI                 VARCHAR(255)
+ANNO(IMMATRICOLAZIONE)  YEAR            NOT_NULL            
+MOTORE                  VARCHAR(255)    NOT_NULL
+ALIMENTAZIONE           ENUM('BENZINA','DIESEL','METANO','GAS','ELETTRICA','IBRIDA') NOT_NULL
+CAVALLI                 VARCHAR(255)    
 GENERE_AUTO             ENUM('CITY-CAR','SPORTIVA','COUPE','CABRIOLET','MONOVOLUME','FUORISTRADA')
-KM                      FLOAT(9,3)
+KM                      FLOAT(9,3)      NOT_NULL
 PROPRIETARI             TINYINT UNSIGNED
 CONDIZIONI              ENUM('PARI AL NUOVO','BUONO STATO','MAL RIDOTTA')
 AMMACCATURE             TINYINT(1)
